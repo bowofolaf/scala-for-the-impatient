@@ -1,22 +1,27 @@
+/**
+Define a string interpolator date so you can define a Java.time.LocalDate as date"$year-$month-$day"
+*/
+
+
 import java.time.LocalDate;
 
 implicit class DateInterpolator(val sc: StringContext) extends AnyVal {
     def date(args: Any*): LocalDate = {
-        if(args.length != 3) throw new IllegalArgumentException("3 arguments for year month and day are required.")
+        if(args.length != 3) throw new IllegalArgumentException("Arguments for year, month and day are required.")
 
         var intArgs:Seq[Int] = null
 
         try {
             intArgs = args.map(arg => arg.toString.toInt)
         } catch {
-            case e:Exception => throw new IllegalArgumentException("Arguments must be integers")
+            case e:Exception => throw new IllegalArgumentException("Arguments must be integers.")
         }
 
-        if(!(sc.parts(0) == "" && sc.parts(3) == "" && sc.parts(1) == "-" && sc.parts(2) == "-")) throw new IllegalArgumentException("Arguments must be separated by hyphens")
+        if(!(sc.parts.head == "" && sc.parts.last == "" && sc.parts(1) == "-" && sc.parts(2) == "-")) throw new IllegalArgumentException("Format year-month-day required.")
 
-        val year = intArgs(0).toInt
-        val month = intArgs(1).toInt
-        val day = intArgs(2).toInt
+        val year = intArgs(0)
+        val month = intArgs(1)
+        val day = intArgs(2)
 
         LocalDate.of(year, month, day)
     }
