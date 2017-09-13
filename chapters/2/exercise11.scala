@@ -17,7 +17,7 @@ implicit class DateInterpolator(val sc: StringContext) extends AnyVal {
             case e:Exception => throw new IllegalArgumentException("Arguments must be integers.")
         }
 
-        if(!(sc.parts.head == "" && sc.parts.last == "" && sc.parts(1) == "-" && sc.parts(2) == "-")) throw new IllegalArgumentException("Format year-month-day required.")
+        if(!(sc.parts.head.toString + sc.parts.last.toString == "" && sc.parts(1) == "-" && sc.parts(2) == "-")) throw new IllegalArgumentException("Format year-month-day required.")
 
         val year = intArgs(0)
         val month = intArgs(1)
