@@ -16,7 +16,7 @@ while(i < n) {
     }
 }
 */
-import scala.collections.mutable.ArrayBuffer
+import scala.collection.mutable.ArrayBuffer
 
 
 var buf = new ArrayBuffer[Int]
