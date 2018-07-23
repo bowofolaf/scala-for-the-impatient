@@ -32,4 +32,4 @@ public class Car {
 //** how much shorter is the Scala class
 // with c#/ auto properties this is pretty concise, the scala code is mainly shorter because of the placement of the primary constructor
 // readonly, read-write properties are all 1 liners. LicensePlate is actually 1 line more concise since it doesnt need a variable and function
-// I would imagine this is much longer in java though, cause you have the implement the getters and setters.
+// I would imagine this is much longer in java though, cause you have to implement the getters and setters unless cheat with lombok annotations
