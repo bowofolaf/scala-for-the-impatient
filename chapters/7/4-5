@@ -1,6 +1,6 @@
-// 4. why do u think scala language designers provided the package object syntax
-
-// ans: To control scope
+// 4. Why do u think scala language designers provided the package object syntax
+// instead of letting you add functions and variables to a package
+// ans: Its a limitation of the Java JVM
 
 // 5. Whats the meaning of 
 // private[com] def giveRaise(rate: Double)
