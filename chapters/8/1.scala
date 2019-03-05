@@ -1,4 +1,5 @@
-// extend BankAccount class
+// extend BankAccount class to a checking account that charges $1 on every
+// deposit/withdrawal
 class CheckingAccount(initialBalance: Double) extends BankAccount(initialBalance) {
     
     override def deposit(amount: Double):Double = {
