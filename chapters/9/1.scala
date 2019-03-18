@@ -2,8 +2,8 @@
 import scala.io.Source;
 
 object chapter9question1 {
-    val source = Source.fromFile("test.txt", "UTF-8")
-    val iterator = source.getLines
+  val source = Source.fromFile("test.txt", "UTF-8")
+  val iterator = source.getLines
 
-    iterator.toBuffer.reverse.foreach(println)
+  iterator.toBuffer.reverse.foreach(println)
 }

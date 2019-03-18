@@ -6,16 +6,16 @@ import java.io.PrintWriter;
 
 object chapter9question2 {
 
-    val source = Source.fromFile("tabs.txt", "UTF-8")
+  val source = Source.fromFile("tabs.txt", "UTF-8")
 
-    val out = new PrintWriter("spaces.txt")
+  val out = new PrintWriter("spaces.txt")
 
-    for (char <- source) {
-        val outChar = if (char == '\t') "  " else char
-        out.print(outChar)
-    }
+  for (char <- source) {
+    val outChar = if (char == '\t') "  " else char
+    out.print(outChar)
+  }
 
-    source.close()
-    out.close()
+  source.close()
+  out.close()
 
 }

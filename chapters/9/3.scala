@@ -4,6 +4,11 @@ import scala.io.Source
 
 object chapter9question3 {
 
-    Source.fromFile("test.txt", "UTF-8").getLines.foreach(line => line.split("\\s+").filter(w => w.size > 12).foreach(println))
+  Source
+    .fromFile("test.txt", "UTF-8")
+    .getLines
+    .foreach(
+      line => line.split("\\s+").filter(w => w.size > 12).foreach(println)
+    )
 
 }
